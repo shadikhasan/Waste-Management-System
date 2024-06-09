@@ -1,4 +1,4 @@
-# CS24-p2-LAZY_CODERS
+# WASTE MANAGEMENT SYSTEM
 
 ## About Us
 - Team Name : `LAZY_CODERS`
