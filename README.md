@@ -34,22 +34,22 @@ The Backend will then be available at [http://127.0.0.1:8000/admin](http://127.0
 
 ## Development Guide
 
-### Load Initial Admin
+### Load Initial Roles
 #### 1.
 ```
 docker-compose run --rm app sh -c "python manage.py initialize_roles"
 ```
-### Load SuperUser
+### Load Initial Admin
 #### 2.
 ```
 docker-compose run --rm app sh -c "python manage.py superuser_init"
 ```
-### Load sts data
+### Load Secondary Transfer Station Data
 #### 3.
 ```
 docker-compose run --rm app sh -c "python manage.py load_sts_data"
 ```
-### Load landfill data
+### Load Landfill Data
 #### 4.
 ```
 docker-compose run --rm app sh -c "python manage.py load_landfill_data"
