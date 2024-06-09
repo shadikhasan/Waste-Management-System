@@ -57,10 +57,4 @@ admin2
 admin2
 
 ```
-### To run smtp4dev as a Windows service for resetting password links with a token in localhost(fake email server)
-
-```
-docker run --rm -it -p 3000:80 -p 2525:25 rnwood/smtp4dev
-
-```
 
