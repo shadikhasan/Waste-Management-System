@@ -1,4 +1,5 @@
 # WASTE MANAGEMENT SYSTEM
+# Finalist Code Samurai Hackathon 2024
 
 ## About Us
 - Team Name : `LAZY_CODERS`
