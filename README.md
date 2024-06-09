@@ -50,7 +50,7 @@ docker-compose run --rm app sh -c "python manage.py load_sts_data"
 ```
 docker-compose run --rm app sh -c "python manage.py load_landfill_data"
 ```
-(The first user will be created as Unassigned. You should change the role to System Admin by logging in to the "Django admin panel([http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin))". After this, you will see full control of the dashboard in frontend([http://127.0.0.1:8080/](http://127.0.0.1:8080/)))
+(The first user will be created as Unassigned. You should change the role to System Admin by logging in to the "Django admin panel([http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin))". After this, you will see full control of the dashboard in frontend([http://127.0.0.1:5173/](http://127.0.0.1:5173/)))
 
 ### Username
 ```
