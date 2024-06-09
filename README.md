@@ -21,7 +21,12 @@ docker-compose build
 docker-compose up
 ```
 
-The Frontend will then be available at [http://127.0.0.1:8080/](http://127.0.0.1:8080/).
+### To stop project, run:
+```
+docker-compose down
+```
+
+The Frontend will then be available at [http://127.0.0.1:5173/](http://127.0.0.1:5173/).
 The Backend will then be available at [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin).
 (Initially, the database is empty)
 ---
