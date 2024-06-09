@@ -1,0 +1,1254 @@
+{
+	"info": {
+		"_postman_id": "512b03a9-c77f-4edc-a580-be5c01db8cba",
+		"name": "EcoSynce Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32760727"
+	},
+	"item": [
+		{
+			"name": "Authentication Endpoints",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"admin2\",\r\n    \"password\":\"admin2\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/auth/login/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password Initiate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"admin2@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/auth/send-reset-password-email/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"send-reset-password-email",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password Confirmation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"uid\":\"MQ\",\r\n    \"token\":\"bo3ez4-c5a6bbcf2ad17a9db2c102d410c47d5f\",\r\n    \"new_password\":\"jaiho123\",\r\n    \"re_new_password\":\"jaiho123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/auth/reset_password_confirm/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"reset_password_confirm",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\":\"shadik\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/auth/change-password/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"change-password",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Management Endpoints",
+			"item": [
+				{
+					"name": "Get all users lists",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0Njg3ODYwLCJpYXQiOjE3MTQ2Nzg4NjAsImp0aSI6IjczYjAzYWRmM2Y2NDRhMmM4MmUzOGE5MGY5ZjExMzJkIiwidXNlcl9pZCI6MX0.BY5-BLJIGk-GQoMS_q_mPE8SMGtRbRzoOoH_iOKB7gI",
+								"type": "default",
+								"uuid": "90a0e156-240d-4b85-b066-2efbcdb041a1"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"role\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/users",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get specific Users Details",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0Njg3ODYwLCJpYXQiOjE3MTQ2Nzg4NjAsImp0aSI6IjczYjAzYWRmM2Y2NDRhMmM4MmUzOGE5MGY5ZjExMzJkIiwidXNlcl9pZCI6MX0.BY5-BLJIGk-GQoMS_q_mPE8SMGtRbRzoOoH_iOKB7gI",
+								"type": "default",
+								"uuid": "bfcbbafa-b534-43da-9c2b-d62920a898a6"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"role\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/users/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0OTUyMTgwLCJpYXQiOjE3MTQ5NDMxODAsImp0aSI6IjY3YTNiNjQ3MDUyYTQzYmI5ZDE3NjRlYzk4ZDQ4NDA3IiwidXNlcl9pZCI6MX0.bTELEjmq3eEmzfdSopUJLAOto1SLgC8V9avBK-ziLcA",
+								"uuid": "a48a21e1-38ab-4b8f-b874-9b5c8f09807e"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"ghalib\",\r\n    \"first_name\": \"\",\r\n    \"last_name\": \"\",\r\n    \"email\": \"ghalib@gmail.com\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/users/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update users details",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0Njg3ODYwLCJpYXQiOjE3MTQ2Nzg4NjAsImp0aSI6IjczYjAzYWRmM2Y2NDRhMmM4MmUzOGE5MGY5ZjExMzJkIiwidXNlcl9pZCI6MX0.BY5-BLJIGk-GQoMS_q_mPE8SMGtRbRzoOoH_iOKB7gI",
+								"type": "default",
+								"uuid": "3e9eccf2-5d32-4d0f-90a8-f15da6bdc1da"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": [\r\n        \"This field is required.\"\r\n    ],\r\n    \"email\": [\r\n        \"This field is required.\"\r\n    ],\r\n    \"password\": [\r\n        \"This field is required.\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/users/2/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"users",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch users details",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0NzU5NzU5LCJpYXQiOjE3MTQ3NTA3NTksImp0aSI6IjlmZjMwNzQ5ZmQwNzQ3NGE4NGZmMTgwYTAzNjdmODQxIiwidXNlcl9pZCI6MX0.3WB5UV_U5Llr-ZM4eEDrHaN-5kUk-Jh1enukAzsgmz8",
+								"uuid": "9c5b35be-148e-4070-888d-cad0d24c1df1"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"shishir\",\r\n    \"first_name\": \"shadik\",\r\n    \"last_name\": \"mahmud\",\r\n    \"email\": \"shadidk@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/users/3/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"users",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0Njg3ODYwLCJpYXQiOjE3MTQ2Nzg4NjAsImp0aSI6IjczYjAzYWRmM2Y2NDRhMmM4MmUzOGE5MGY5ZjExMzJkIiwidXNlcl9pZCI6MX0.BY5-BLJIGk-GQoMS_q_mPE8SMGtRbRzoOoH_iOKB7gI",
+								"type": "default",
+								"uuid": "51977bf4-8590-48bb-80f8-3d70a24adf6b"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": [\r\n        \"This field is required.\"\r\n    ],\r\n    \"email\": [\r\n        \"This field is required.\"\r\n    ],\r\n    \"password\": [\r\n        \"This field is required.\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/users/2/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"users",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all available roles",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0Njg3ODYwLCJpYXQiOjE3MTQ2Nzg4NjAsImp0aSI6IjczYjAzYWRmM2Y2NDRhMmM4MmUzOGE5MGY5ZjExMzJkIiwidXNlcl9pZCI6MX0.BY5-BLJIGk-GQoMS_q_mPE8SMGtRbRzoOoH_iOKB7gI",
+								"type": "default",
+								"uuid": "01947256-89f6-4598-854b-5378f5ac8f98"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/users/roles/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"users",
+								"roles",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a users roles",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0Njg3ODYwLCJpYXQiOjE3MTQ2Nzg4NjAsImp0aSI6IjczYjAzYWRmM2Y2NDRhMmM4MmUzOGE5MGY5ZjExMzJkIiwidXNlcl9pZCI6MX0.BY5-BLJIGk-GQoMS_q_mPE8SMGtRbRzoOoH_iOKB7gI",
+								"type": "default",
+								"uuid": "8669d588-3a5c-4b83-9a4a-68f4f9245f55"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/users/2/roles/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"users",
+								"2",
+								"roles",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a Users Roles",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0NzYxMzc2LCJpYXQiOjE3MTQ3NTIzNzYsImp0aSI6IjgyNTAzOTM1NGJhNDRkZDBiNGJmZjM3ZmU1OThlZGFlIiwidXNlcl9pZCI6MX0.08BsgeSrhV_U8ZlP_WnGe7pCAdFMj6SAsbI9XhYrrjk",
+								"uuid": "79dc18c3-edf4-4965-ae1b-ff374dd5d3c2"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"role\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/users/3/roles/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"users",
+								"3",
+								"roles",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profile Management Endpoints",
+			"item": [
+				{
+					"name": "Profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0Njg5NzYzLCJpYXQiOjE3MTQ2ODA3NjMsImp0aSI6IjE2Y2MxN2JlNWYxNzQ5NmU5NzU5MTg0MzY1OWM3Y2RhIiwidXNlcl9pZCI6M30.GDKZMz6SLL6ZRj2KJzH8b4OY8SJhot9QLWdCvLr-glQ",
+								"type": "default",
+								"uuid": "c7f07eb8-eead-4c30-8845-5db15345c07e"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"role\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/profile",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Profile",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0Njg5NzYzLCJpYXQiOjE3MTQ2ODA3NjMsImp0aSI6IjE2Y2MxN2JlNWYxNzQ5NmU5NzU5MTg0MzY1OWM3Y2RhIiwidXNlcl9pZCI6M30.GDKZMz6SLL6ZRj2KJzH8b4OY8SJhot9QLWdCvLr-glQ",
+								"type": "default",
+								"uuid": "9c6c1896-3bc3-4009-b29d-1c6485114665"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"shadik2\",\r\n    \"first_name\": \"shadik\",\r\n    \"last_name\": \"tonni\",\r\n    \"email\": \"shadik@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/profile/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"profile",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Profile Partial",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0Njg5NzYzLCJpYXQiOjE3MTQ2ODA3NjMsImp0aSI6IjE2Y2MxN2JlNWYxNzQ5NmU5NzU5MTg0MzY1OWM3Y2RhIiwidXNlcl9pZCI6M30.GDKZMz6SLL6ZRj2KJzH8b4OY8SJhot9QLWdCvLr-glQ",
+								"uuid": "81c77edb-10f2-4162-a75c-e16079127954"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"shadik2\",\r\n    \"first_name\": \"shadik\",\r\n    \"last_name\": \"tonni\",\r\n    \"email\": \"shadik@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/profile/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"profile",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RBAC Endpoints",
+			"item": [
+				{
+					"name": "Get all Groups",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"LandFill Manager Permissions\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/rbac/roles/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"rbac",
+								"roles",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a Group for Permissions",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"LandFill Manager Permissions\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/rbac/roles/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"rbac",
+								"roles",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all permission of a group",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"permission_id\": 7\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/rbac/groups/5/permissions/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"rbac",
+								"groups",
+								"5",
+								"permissions",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a permission of a group",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"permission_id\": 7\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/rbac/groups/1/permissions/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"rbac",
+								"groups",
+								"1",
+								"permissions",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a Group by adding permissions",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"permission_ids\": [3, 4]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/rbac/groups/5/permissions/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"rbac",
+								"groups",
+								"5",
+								"permissions",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Users permission by adding in a group",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/groups/2/assign-users/3/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"groups",
+								"2",
+								"assign-users",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Data Entry Endpoints",
+			"item": [
+				{
+					"name": "List Secondary Transfer Stations:",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/secondary-transfer-stations/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"secondary-transfer-stations",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Secondary Transfer Stations",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/secondary-transfer-stations/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"secondary-transfer-stations",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Landfills",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/landfills/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"landfills",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Landfills",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/landfills/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"landfills",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Vehicles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/vehicles/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"vehicles",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Vehicles",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/vehicles/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"vehicles",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Waste Transfers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE1MDIzNjc3LCJpYXQiOjE3MTUwMTQ2NzcsImp0aSI6IjRhMjllZjFjMDBhYjRkZmRhMDRkYTdiOTgyNDc0MWUzIiwidXNlcl9pZCI6M30.fC7IrLrX1-v6199W691ZZ5DrYhgQlIDCvEL8D3uZmZE",
+								"uuid": "146f46eb-bf40-4d91-a28a-ec97cc6437be"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/waste-transfers/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"waste-transfers",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Waste Transfers",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/waste-transfers/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"waste-transfers",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Dumping Entries",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE1MDgyMTg1LCJpYXQiOjE3MTUwNzMxODUsImp0aSI6Ijg2ZjFiOWJjZGU0NzQ2YzM5ZjZhODFjYjM0NDU0MDViIiwidXNlcl9pZCI6M30.MgjgAPrrqwnYfFO7fuhoJAvrivhZrX0cfhodzB0kiro",
+								"uuid": "61f46640-e415-488f-a2ea-a9340de5e05b"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/dumping-entries/21",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"dumping-entries",
+								"21"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Dumping Entries",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE1MDgyMTg1LCJpYXQiOjE3MTUwNzMxODUsImp0aSI6Ijg2ZjFiOWJjZGU0NzQ2YzM5ZjZhODFjYjM0NDU0MDViIiwidXNlcl9pZCI6M30.MgjgAPrrqwnYfFO7fuhoJAvrivhZrX0cfhodzB0kiro",
+								"uuid": "600d9611-af0b-464d-8849-203070425b66"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Vehicle\": 1,\r\n    \"SecondaryTransferStation\": 3,\r\n    \"Landfill\": 2,\r\n    \"VolumeOfWaste\": \"50.00\",\r\n    \"Distance\": \"50.00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/dumping-entries/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"dumping-entries",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Custom Api",
+			"item": [
+				{
+					"name": "total-dumping-records",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/total-dumping-records/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"total-dumping-records",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "last-7-days-dumping-records",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/last-7-days-dumping-records/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"last-7-days-dumping-records",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "landfill-waste-capacity",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/landfill-waste-capacity/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"landfill-waste-capacity",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "vehicle-summary",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/vehicle-summary/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"vehicle-summary",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user-summary",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/user-summary/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"user-summary",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Map Endpoints",
+			"item": [
+				{
+					"name": "Finding route",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"source_lat\": 24.375389,\r\n    \"source_lon\": 88.602569,\r\n    \"dest_lat\": 24.377813,\r\n    \"dest_lon\": 88.567937,\r\n    \"optimize_for\": \"FastestRoute\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/route/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"route",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
